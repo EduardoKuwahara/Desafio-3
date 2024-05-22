@@ -1,13 +1,11 @@
 import  os
 from flask import Flask, redirect, render_template, request, url_for
 from flask_mysqldb import MySQL
+import MySQLdb
 
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = 'localhost' 
-app.config['MYSQL_USER'] = "root"
-app.config['MYSQL_PASSWORD'] = "@D5d52811"
-app.config['MYSQL_DB'] = "Desafio4"
+db = MySQLdb.connect(host='bd', port=3306, user='root', passwd='fatec', db='Desafio4')
 
 mysql = MySQL(app)
 
